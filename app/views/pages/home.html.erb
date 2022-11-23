@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+  <h1>Test Credit</h1>
+  <ul>
+    <li>Borrowed amount: <%= @credit.borrowed_amount %>€</li>
+    <li>Duration: <%= @credit.duration %> months</li>
+    <li>Nominal rate: <%= @credit.nominal_rate %>%</li>
+    <li>Guarantee fee: <%= @credit.guarante_fee %>€</li>
+    <li>Application fee: <%= @credit.application_fee %>€</li>
+    <li>Insurance rate: <%= @credit.insurance_rate %>%</li>
+  </ul>
+
+  <p>Insurance cost: <%= @credit.insurance_cost.to_i %>€</p>
+  <p>Interest amount:</p>
+  <p>Monthly instalment:</p>
+</div>
