@@ -13,4 +13,8 @@ class Credit < ApplicationRecord
   def insurance_cost
     borrowed_amount * insurance_percentage * duration / 12
   end
+
+  def interests
+    (borrowed_amount * ((nominal_percentage / 12) / (1 - ((1 + (nominal_percentage / 12))**-duration)))).round(2)
+  end
 end
