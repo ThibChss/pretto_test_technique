@@ -3,13 +3,16 @@
   <ul>
     <li>Borrowed amount: <%= @credit.borrowed_amount %>€</li>
     <li>Duration: <%= @credit.duration %> months</li>
-    <li>Nominal rate: <%= '%.2f' % @credit.nominal_rate %>%</li>
+    <li>Nominal rate: <%= @credit.nominal_rate %>%</li>
     <li>Guarantee fee: <%= @credit.guarantee_fee %>€</li>
     <li>Application fee: <%= @credit.application_fee %>€</li>
-    <li>Insurance rate: <%= '%.2f' % @credit.insurance_rate %>%</li>
+    <li>Brokerage fee: <%= @credit.brokerage_fee %>€</li>
+    <li>Insurance rate: <%= @credit.insurance_rate %>%</li>
   </ul>
 
   <p>Insurance cost: <%= @credit.insurance_cost.to_i %>€</p>
   <p>Interest amount: <%= '%.2f' % @credit.interests_amount %>€</p>
   <p>Monthly instalment: <%= '%.2f' % @credit.monthly_instalment %>€</p>
+  <p>Credit cost: <%= '%.2f' % @credit.credit_cost %>€</p>
+  <p>Total amount to refund: <%= '%.2f' % @credit.include_all_fee %>€</p>
 </div>
