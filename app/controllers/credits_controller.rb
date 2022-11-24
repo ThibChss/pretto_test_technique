@@ -1,4 +1,5 @@
 class CreditsController < ApplicationController
+  
   def show
   end
 
@@ -12,6 +13,10 @@ class CreditsController < ApplicationController
   end
 
   private
+
+  def set_credit
+    @credit = Credit.find(params[:id])
+  end
 
   def credit_params
     params.require(:credit).permit(:borrowed_amount, :duration, :nominal_rate, :guarantee_fee,
