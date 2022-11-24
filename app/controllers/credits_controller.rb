@@ -1,7 +1,10 @@
 class CreditsController < ApplicationController
   before_action :set_credit, only: :show
 
-  def show
+  def show; end
+
+  def new
+    @credit = Credit.new
   end
 
   def create
@@ -9,7 +12,7 @@ class CreditsController < ApplicationController
     if @credit.save
       redirect_to credit_path(@credit)
     else
-      redirect_to root_path, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
