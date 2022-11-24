@@ -1,7 +1,10 @@
 class CreditsController < ApplicationController
   before_action :set_credit, only: :show
 
-  def show
+  def show; end
+
+  def new
+    @credit = Credit.new
   end
 
   def create

@@ -1,5 +1,5 @@
 <div class="container">
-  <%= simple_form_for(@new_credit) do |f| %>
+  <%= simple_form_for(@credit) do |f| %>
     <%= f.input :borrowed_amount, input_html: { min: 0 }, label: 'Montant emprunté', required: false %>
     <%= f.input :duration, input_html: { min: 0 }, label: "Durée de l'emprunt", required: false %>
     <%= f.input :nominal_rate, input_html: { min: 0 }, label: 'Taux nominal', required: false, required: false %>
