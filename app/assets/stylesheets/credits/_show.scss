@@ -1,0 +1,15 @@
+.card-info-credit {
+  width: 200px;
+}
+
+.details-credit-user {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2em;
+  justify-items: center;
+}
+
+.result-input-credit-user {
+  font-weight: 600;
+  border-bottom: 1px solid #5F8D4E;
+}

@@ -1,14 +1,39 @@
+<div class="container text-center py-3">
+  <h1>Détails de votre prêt</h1>
+</div>
+
+
 <div class="container">
-  <h1>Test Credit</h1>
-  <ul>
-    <li>Montant emprunté: <%= number_with_delimiter(@credit.borrowed_amount, delimiter: ' ') %>€</li>
-    <li>Durée de l'emprunt: <%= @credit.duration_in_years %> ans</li>
-    <li>Taux nominal: <%= @credit.nominal_rate %>%</li>
-    <li>Frais de garantie: <%= number_with_delimiter(@credit.guarantee_fee, delimiter: ' ') %>€</li>
-    <li>Frais de dossier: <%= number_with_delimiter(@credit.application_fee, delimiter: ' ') %>€</li>
-    <li>Frais de courtage: <%= number_with_delimiter(@credit.brokerage_fee, delimiter: ' ') %>€</li>
-    <li>Taux d'assurance: <%= @credit.insurance_rate %>%</li>
-  </ul>
+  <div class="details-credit-user my-5">
+    <div class="card-info-credit">
+      <p>Montant emprunté :</p>
+      <span class="result-input-credit-user pb-3"><%= number_with_delimiter(@credit.borrowed_amount, delimiter: ' ') %>€</span>
+    </div>
+    <div class="card-info-credit">
+      <p>Durée de l'emprunt :</p>
+      <span class="result-input-credit-user pb-3"><%= @credit.duration_in_years %> ans</span>
+    </div>
+    <div class="card-info-credit">
+      <p>Taux nominal :</p>
+      <span class="result-input-credit-user pb-3"><%= @credit.nominal_rate %>%</span>
+    </div>
+    <div class="card-info-credit">
+      <p>Frais de garantie :</p>
+      <span class="result-input-credit-user pb-3"><%= number_with_delimiter(@credit.guarantee_fee, delimiter: ' ') %>€</span>
+    </div>
+    <div class="card-info-credit">
+      <p>Frais de dossier :</p>
+      <span class="result-input-credit-user pb-3"><%= number_with_delimiter(@credit.application_fee, delimiter: ' ') %>€</span>
+    </div>
+    <div class="card-info-credit">
+      <p>Frais de courtage :</p>
+      <span class="result-input-credit-user pb-3"><%= number_with_delimiter(@credit.brokerage_fee, delimiter: ' ') %>€</span>
+    </div>
+    <div class="card-info-credit">
+      <p>Taux d'assurance :</p>
+      <span class="result-input-credit-user pb-3"><%= @credit.insurance_rate %>%</span>
+    </div>
+  </div>
 
   <p>Coût assurance: <%= number_with_delimiter(@credit.insurance_cost.to_i, delimiter: ' ') %>€</p>
   <p>Montant des intérêts: <%= number_with_delimiter(@credit.interests_amount.round, delimiter: ' ') %>€</p>
