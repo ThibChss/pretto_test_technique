@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @credit = Credit.first
+    @credit = Credit.last
+    @new_credit = Credit.new
   end
 end
