@@ -1,5 +1,5 @@
 class CreditsController < ApplicationController
-  before_action :set_credit, only: :show
+  before_action :set_credit, only: %i[show edit update]
 
   def show; end
 
@@ -13,6 +13,16 @@ class CreditsController < ApplicationController
       redirect_to credit_path(@credit)
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @credit.update(credit_params)
+      redirect_to credit_path(@credit)
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
