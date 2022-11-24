@@ -9,32 +9,4 @@
     <%= f.input :insurance_rate %>
     <%= f.submit 'Calculer' %>
   <% end %>
-
-
-
-
-
-  <h1>Test Credit</h1>
-  <ul>
-    <li>Montant emprunté: <%= @credit.borrowed_amount %>€</li>
-    <li>Durée de l'emprunt: <%= @credit.duration_in_years %> ans</li>
-    <li>Taux nominal: <%= @credit.nominal_rate %>%</li>
-    <li>Frais de garantie: <%= @credit.guarantee_fee %>€</li>
-    <li>Frais de dossier: <%= @credit.application_fee %>€</li>
-    <li>Frais de courtage: <%= @credit.brokerage_fee %>€</li>
-    <li>Taux d'assurance: <%= @credit.insurance_rate %>%</li>
-  </ul>
-
-  <p>Coût assurance: <%= @credit.insurance_cost.to_i %>€</p>
-  <p>Montant des intérêts: <%= @credit.interests_amount.round %>€</p>
-  <br>
-  <p>Mensualité: <%= '%.2f' % @credit.monthly_instalment %>€</p>
-  <p>Mensualité avec assurance: <%= '%.2f' % @credit.monthly_instalment_w_insurance %>€</p>
-  <br>
-  <p>Coût du crédit sans assurance: <%= @credit.credit_cost.round %>€</p>
-  <p>Coût du crédit avec assurance: <%= @credit.credit_cost_w_insurance.round %>€</p>
-  <br>
-  <p>Montant total à rembourser: <%= @credit.include_all_fee.round %>€</p>
-  <br>
-  <h6>TAEG: <%= @credit.calculate_aprc.round(2) %>%</h6>
 </div>
