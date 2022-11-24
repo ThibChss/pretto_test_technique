@@ -1,4 +1,8 @@
 class CreditsController < ApplicationController
+  def create
+    @credit = Credit.new(credit_params)
+  end
+
   private
 
   def credit_params
