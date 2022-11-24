@@ -1,6 +1,13 @@
 <div class="container">
   <%= simple_form_for(@new_credit) do |f| %>
     <%= f.input :borrowed_amount %>
+    <%= f.input :duration %>
+    <%= f.input :nominal_rate %>
+    <%= f.input :guarantee_fee %>
+    <%= f.input :application_fee %>
+    <%= f.input :brokerage_fee %>
+    <%= f.input :insurance_rate %>
+    <%= f.submit 'Calculer' %>
   <% end %>
 
 
