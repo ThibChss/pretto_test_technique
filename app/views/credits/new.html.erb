@@ -1,0 +1,12 @@
+<div class="container">
+  <%= simple_form_for(@new_credit) do |f| %>
+    <%= f.input :borrowed_amount, input_html: { min: 0 }, label: 'Montant emprunté', required: false %>
+    <%= f.input :duration, input_html: { min: 0 }, label: "Durée de l'emprunt", required: false %>
+    <%= f.input :nominal_rate, input_html: { min: 0 }, label: 'Taux nominal', required: false, required: false %>
+    <%= f.input :guarantee_fee, input_html: { min: 0 }, label: 'Frais de garanties', required: false %>
+    <%= f.input :application_fee, input_html: { min: 0 }, label: 'Frais de dossier', required: false %>
+    <%= f.input :brokerage_fee, input_html: { min: 0 }, label: 'Frais de courtage', required: false %>
+    <%= f.input :insurance_rate, input_html: { min: 0 }, label: 'Taux assurance', required: false %>
+    <%= f.submit 'Calculer' %>
+  <% end %>
+</div>
