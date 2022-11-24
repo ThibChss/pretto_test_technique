@@ -12,7 +12,7 @@ class CreditsController < ApplicationController
     if @credit.save
       redirect_to credit_path(@credit)
     else
-      redirect_to root_path, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
