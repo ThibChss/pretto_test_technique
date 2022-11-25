@@ -1,27 +1,71 @@
-<div class="container">
-  <h1>Test Credit</h1>
-  <ul>
-    <li>Montant emprunté: <%= number_with_delimiter(@credit.borrowed_amount, delimiter: ' ') %>€</li>
-    <li>Durée de l'emprunt: <%= @credit.duration_in_years %> ans</li>
-    <li>Taux nominal: <%= @credit.nominal_rate %>%</li>
-    <li>Frais de garantie: <%= number_with_delimiter(@credit.guarantee_fee, delimiter: ' ') %>€</li>
-    <li>Frais de dossier: <%= number_with_delimiter(@credit.application_fee, delimiter: ' ') %>€</li>
-    <li>Frais de courtage: <%= number_with_delimiter(@credit.brokerage_fee, delimiter: ' ') %>€</li>
-    <li>Taux d'assurance: <%= @credit.insurance_rate %>%</li>
-  </ul>
+<div class="container text-center py-3">
+  <h1>Détails de votre prêt 💰</h1>
+</div>
 
-  <p>Coût assurance: <%= number_with_delimiter(@credit.insurance_cost.to_i, delimiter: ' ') %>€</p>
-  <p>Montant des intérêts: <%= number_with_delimiter(@credit.interests_amount.round, delimiter: ' ') %>€</p>
-  <br>
-  <p>Mensualité: <%= number_with_delimiter(@credit.monthly_instalment, delimiter: ' ') %>€</p>
-  <p>Mensualité avec assurance: <%= number_with_delimiter(@credit.monthly_instalment_w_insurance, delimiter: ' ') %>€</p>
-  <br>
-  <p>Coût du crédit sans assurance: <%= number_with_delimiter(@credit.credit_cost.round, delimiter: ' ') %>€</p>
-  <p>Coût du crédit avec assurance: <%= number_with_delimiter(@credit.credit_cost_w_insurance.round, delimiter: ' ') %>€</p>
-  <br>
-  <p>Montant total à rembourser: <%= number_with_delimiter(@credit.include_all_fee.round, delimiter: ' ') %>€</p>
-  <br>
-  <h6>TAEG: <%= @credit.calculate_aprc.round(2) %>%</h6>
 
-  <%= link_to 'Modifier informations', edit_credit_path(@credit) %>
+<div class="container w-75">
+  <div class="details-credit-user my-5">
+    <div class="card-info-credit">
+      <p class="result-name-input-user">Montant emprunté :</p>
+      <span class="result-input-credit-user pb-3"><%= number_with_delimiter(@credit.borrowed_amount, delimiter: ' ') %>€</span>
+    </div>
+    <div class="card-info-credit">
+      <p class="result-name-input-user">Durée de l'emprunt :</p>
+      <span class="result-input-credit-user pb-3"><%= @credit.duration_in_years %> ans</span>
+    </div>
+    <div class="card-info-credit">
+      <p class="result-name-input-user">Taux nominal :</p>
+      <span class="result-input-credit-user pb-3"><%= @credit.nominal_rate %>%</span>
+    </div>
+    <div class="card-info-credit">
+      <p class="result-name-input-user">Frais de garantie :</p>
+      <span class="result-input-credit-user pb-3"><%= number_with_delimiter(@credit.guarantee_fee, delimiter: ' ') %>€</span>
+    </div>
+    <div class="card-info-credit">
+      <p class="result-name-input-user">Frais de dossier :</p>
+      <span class="result-input-credit-user pb-3"><%= number_with_delimiter(@credit.application_fee, delimiter: ' ') %>€</span>
+    </div>
+    <div class="card-info-credit">
+      <p class="result-name-input-user">Frais de courtage :</p>
+      <span class="result-input-credit-user pb-3"><%= number_with_delimiter(@credit.brokerage_fee, delimiter: ' ') %>€</span>
+    </div>
+    <div class="card-info-credit">
+      <p class="result-name-input-user">Taux d'assurance :</p>
+      <span class="result-input-credit-user pb-3"><%= @credit.insurance_rate %>%</span>
+    </div>
+    <div class="card-info-credit d-flex align-items-center">
+      <%= link_to 'Modifier informations', edit_credit_path(@credit), class: 'btn btn-success edit-button' %>
+    </div>
+  </div>
+</div>
+
+<div class="container w-75 pb-4">
+  <div class="title-calcul text-center">
+    <h4>Calculé pour vous 🧮</h4>
+  </div>
+</div>
+
+<div class="container w-75 pb-5">
+  <div class="details-calcul pb-4">
+    <div class="card-result-calcul">
+      <p class="result-calcul-name-from-input">Mensualité :</p>
+      <span class="result-calcul pb-3"><%= number_with_delimiter(@credit.monthly_instalment, delimiter: ' ') %>€</span>
+    </div>
+    <div class="card-result-calcul">
+      <p class="result-calcul-name-from-input">Mensualité avec assurance :</p>
+      <span class="result-calcul pb-3"><%= number_with_delimiter(@credit.monthly_instalment_w_insurance, delimiter: ' ') %>€</span>
+    </div>
+    <div class="card-result-calcul">
+      <p class="result-calcul-name-from-input">Coût du crédit :</p>
+      <span class="result-calcul pb-3"><%= number_with_delimiter(@credit.credit_cost.round, delimiter: ' ') %>€</span>
+    </div>
+    <div class="card-result-calcul">
+      <p class="result-calcul-name-from-input">Coût de l'assurance :</p>
+      <span class="result-calcul pb-3"><%= number_with_delimiter(@credit.insurance_cost.to_i, delimiter: ' ') %>€</span>
+    </div>
+    <div class="card-result-calcul">
+      <h6 class="result-calcul-name-from-input">Votre TAEG :</h6>
+      <span class="result-calcul pb-3"><%= @credit.calculate_aprc.round(2) %>%</span>
+    </div>
+  </div>
 </div>

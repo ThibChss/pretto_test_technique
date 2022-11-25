@@ -1,0 +1,23 @@
+.card-result-calcul,
+.card-info-credit {
+  width: 250px;
+}
+
+.details-calcul,
+.details-credit-user {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2em;
+  justify-items: center;
+}
+
+.result-calcul,
+.result-input-credit-user {
+  font-weight: 600;
+  border-bottom: 1px solid #5F8D4E;
+}
+
+.result-calcul-name-from-input,
+.result-name-input-user {
+  margin-bottom: 8px;
+}
