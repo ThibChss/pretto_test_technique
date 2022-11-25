@@ -3,4 +3,10 @@
   <h6>Soyez sûr de votre prêt</h6>
 </div>
 
-<%= render 'form_credit', credit: @credit %>
+<div data-controller='display-form'>
+  <div class="container w-50 text-center contain-button-home" data-display-form-target='buttonHome'>
+    <%= link_to 'Essayer vous même', '#', class: 'btn btn-success form-button', data: { action: 'click->display-form#display_form' } %>
+  </div>
+
+  <%= render 'form_credit', credit: @credit %>
+</div>

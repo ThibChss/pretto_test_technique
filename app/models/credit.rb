@@ -52,8 +52,8 @@ class Credit < ApplicationRecord
     borrowed_amount + credit_cost_w_insurance
   end
 
-  # Calculate the annual percentage rate of charge
+  # Calculate the annual percentage rate of charge without insurance
   def calculate_aprc
-    (include_all_fee - borrowed_amount) / borrowed_amount * duration / duration_in_years
+    credit_cost_w_insurance / borrowed_amount * duration / duration_in_years
   end
 end

@@ -1,4 +1,4 @@
-<div class="container w-50 mt-3 pb-4">
+<div class="container w-50 mt-3 pb-5 d-none" data-display-form-target='formDiv'>
   <%= simple_form_for(credit) do |f| %>
     <%= f.input :borrowed_amount, input_html: { min: 0 }, label: 'Montant emprunté', required: false, placeholder: '150 000€' %>
     <%= f.input :duration, input_html: { min: 0 }, label: "Durée de l'emprunt (en mois)", required: false, placeholder: '240' %>
