@@ -19,8 +19,3 @@ Lancer les migrations
 ```
 rails db:migrate
 ```
-Lancer la seed
-
-```
-rails db:seed
-```
