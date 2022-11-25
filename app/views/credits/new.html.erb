@@ -8,5 +8,7 @@
     <%= link_to 'Essayer vous même', '#', class: 'btn btn-success form-button', data: { action: 'click->display-form#display_form' } %>
   </div>
 
-  <%= render 'form_credit', credit: @credit %>
+  <div class='d-none' data-display-form-target='formDiv'>
+    <%= render 'form_credit', credit: @credit %>
+  </div>
 </div>
