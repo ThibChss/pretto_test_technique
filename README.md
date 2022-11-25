@@ -1,1 +1,26 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+## Setup
+Pour le premier lancement, faire :
+
+```
+bundle install
+```
+```
+yarn install
+```
+
+Créer la DB
+
+```
+rails db:create
+```
+
+Lancer les migrations
+
+```
+rails db:migrate
+```
+Lancer la seed
+
+```
+rails db:seed
+```
